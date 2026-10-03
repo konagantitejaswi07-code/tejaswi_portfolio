@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejaswi | B.Tech AIML Student & Aspiring Software Engineer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glassmorphism {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(20,184,166,0.3), rgba(99,102,241,0.3));
+            padding: 1px;
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .progress-bar-fill {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #14b8a6;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-dark-bg text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        T
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                        Tejaswi<span class="text-brand-500">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Home</a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">About</a>
+                    <a href="#education" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Education</a>
+                    <a href="#skills" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Skills</a>
+                    <a href="#projects" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Projects</a>
+                    <a href="#certificates" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Certificates</a>
+                    <a href="#achievements" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Achievements</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Contact</a>
+                </nav>
+
+                <!-- Right Actions: Theme Toggle & Resume CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button id="themeToggle" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-500 dark:hover:text-brand-400 transition hover:scale-105">
+                        <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg text-amber-400"></i>
+                    </button>
+                    <a href="#resume" class="px-4 py-2 rounded-xl gradient-bg text-white font-semibold text-sm shadow-md shadow-brand-500/20 hover:opacity-95 hover:shadow-lg transition transform hover:-translate-y-0.5">
+                        Resume
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="themeToggleMobile" aria-label="Toggle Dark Mode Mobile" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    </button>
+                    <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+            <a href="#education" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+            <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+            <a href="#certificates" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Certificates</a>
+            <a href="#achievements" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Achievements</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+            <a href="#resume" class="mobile-link block mt-4 text-center py-2.5 rounded-xl gradient-bg text-white font-semibold shadow-md">View Resume</a>
+        </div>
+    </header>
+
+    <!-- Hero / Home Section -->
+    <section id="home" class="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-brand-500/15 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent-500/15 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Intro -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 dark:bg-brand-400/10 border border-brand-500/20 text-brand-600 dark:text-brand-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+                        Welcome to my portfolio
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                        Hi, I'm <span class="gradient-text">Tejaswi</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300 min-h-[2.5rem] flex items-center justify-center lg:justify-start">
+                        <span id="typing-text" class="typing-cursor text-accent-600 dark:text-accent-500"></span>
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        A passionate 2nd-year B.Tech Artificial Intelligence & Machine Learning student in India. I focus on building real-world software solutions, exploring machine learning models, and turning complex problems into elegant tech.
+                    </p>
+
+                    <!-- CTAs & Social Links -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#skills" class="w-full sm:w-auto px-8 py-3.5 rounded-xl gradient-bg text-white font-bold shadow-lg shadow-brand-500/25 hover:opacity-95 transition transform hover:-translate-y-0.5 text-center">
+                            View My Skills <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white font-bold hover:bg-slate-300 dark:hover:bg-slate-700 transition text-center">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <!-- Quick Social Buttons -->
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-slate-600 dark:text-slate-400">
+                        <a href="mailto:tejaswi@example.com" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition" title="Email Me">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition" title="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:text-brand-500 dark:hover:text-brand-400 hover:scale-110 transition" title="GitHub Repository">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Avatar Card / Code Illustration -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative Backdrop Ring -->
+                        <div class="absolute -inset-1 rounded-3xl gradient-bg opacity-30 blur-xl animate-pulse-slow"></div>
+                        
+                        <div class="relative bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl space-y-6">
+                            <!-- Code Header Dot Matrix -->
+                            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700/60 pb-4">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">DeveloperProfile.py</span>
+                            </div>
+
+                            <!-- Developer Card Details -->
+                            <div class="space-y-3 font-mono text-xs sm:text-sm">
+                                <p><span class="text-purple-500 font-semibold">class</span> <span class="text-brand-500 font-bold">Developer</span>:</p>
+                                <div class="pl-4 space-y-1 text-slate-600 dark:text-slate-300">
+                                    <p><span class="text-accent-500">name</span> = <span class="text-emerald-600 dark:text-emerald-400">"Tejaswi"</span></p>
+                                    <p><span class="text-accent-500">degree</span> = <span class="text-emerald-600 dark:text-emerald-400">"B.Tech AIML (2nd Year)"</span></p>
+                                    <p><span class="text-accent-500">location</span> = <span class="text-emerald-600 dark:text-emerald-400">"India 🇮🇳"</span></p>
+                                    <p><span class="text-accent-500">languages</span> = [<span class="text-emerald-600 dark:text-emerald-400">"C"</span>, <span class="text-emerald-600 dark:text-emerald-400">"C++"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Python"</span>]</p>
+                                    <p><span class="text-accent-500">passions</span> = [<span class="text-emerald-600 dark:text-emerald-400">"AI"</span>, <span class="text-emerald-600 dark:text-emerald-400">"ML"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Software Dev"</span>]</p>
+                                </div>
+                                <p class="pt-2"><span class="text-purple-500 font-semibold">def</span> <span class="text-amber-500 font-semibold">get_goal</span>(<span class="text-slate-400">self</span>):</p>
+                                <p class="pl-4 text-slate-600 dark:text-slate-300"><span class="text-purple-500">return</span> <span class="text-emerald-600 dark:text-emerald-400">"Build impactful tech solutions"</span></p>
+                            </div>
+
+                            <!-- Floating Tech Badges -->
+                            <div class="pt-2 flex flex-wrap gap-2 border-t border-slate-100 dark:border-slate-700/60">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-brand-600 dark:text-brand-400"><i class="fa-solid fa-brain mr-1"></i> AI & ML</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-accent-500"><i class="fa-solid fa-code mr-1"></i> Python</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-emerald-500"><i class="fa-solid fa-laptop-code mr-1"></i> Data Structures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-slate-100/60 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">About Me</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">Get to know my academic background, interests, and aspirations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Narrative Bio Card -->
+                <div class="lg:col-span-7 bg-white dark:bg-dark-card p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-2xl bg-brand-500/10 text-brand-500">
+                                <i class="fa-solid fa-user-graduate text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">B.Tech AIML Student</h3>
+                                <p class="text-xs text-brand-600 dark:text-brand-400 font-semibold">2nd Year Undergraduate • India</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Hello! I am <strong class="text-slate-900 dark:text-white">Tejaswi</strong>, a dedicated 2nd-year B.Tech student specializing in Artificial Intelligence and Machine Learning. I am deeply fascinated by how intelligent systems can transform data into meaningful predictions and practical software applications.
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            My foundational learning journey spans programming languages like <strong>C, C++, and Python</strong> alongside core concepts in Data Structures and Web Technologies. I constantly seek opportunities to apply theoretical concepts through hands-on personal projects and academic initiatives.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                            <span class="block text-xl font-bold gradient-text">2nd Year</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Current Level</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                            <span class="block text-xl font-bold gradient-text">AIML</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Specialization</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl col-span-2 sm:col-span-1">
+                            <span class="block text-xl font-bold gradient-text">3+</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Core Languages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Highlights Grid -->
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <!-- Career Goal -->
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+                        <div class="p-3 rounded-xl bg-accent-500/10 text-accent-500 shrink-0">
+                            <i class="fa-solid fa-bullseye text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Career Goal</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                To become a highly skilled software engineer and build innovative, useful technology solutions that solve real-world challenges.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500 shrink-0">
+                            <i class="fa-solid fa-music text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Hobbies & Creative Side</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Listening to music and singing. Music helps me unwind, stay creative, and maintain focus while coding.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Primary Interests -->
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+                        <div class="p-3 rounded-xl bg-amber-500/10 text-amber-500 shrink-0">
+                            <i class="fa-solid fa-lightbulb text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Core Focus</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Artificial Intelligence, Machine Learning algorithms, Data Structures, and Modern Web Development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Education Timeline</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">My academic pathway and qualification journey.</p>
+            </div>
+
+            <!-- Timeline Structure -->
+            <div class="max-w-4xl mx-auto relative pl-6 sm:pl-8 border-l-2 border-slate-200 dark:border-slate-800 space-y-12">
+                <!-- Timeline Item 1: B.Tech -->
+                <div class="relative group">
+                    <!-- Marker Node -->
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-brand-500 border-4 border-white dark:border-dark-bg shadow group-hover:scale-125 transition"></div>
+                    
+                    <div class="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-bold w-fit">
+                                2023 – 2027 (Expected)
+                            </span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> India</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                            B.Tech – Artificial Intelligence & Machine Learning
+                        </h3>
+                        <p class="text-brand-600 dark:text-brand-400 font-semibold text-sm sm:text-base mt-1">
+                            [Your College Name] <span class="text-slate-400 text-xs font-normal">(2nd Year Enrolled)</span>
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                            Focusing on Core Computer Science principles, Data Structures & Algorithms, Object-Oriented Programming in C++/Python, Machine Learning Fundamentals, and Mathematical Foundations of AI.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: Intermediate -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-accent-500 border-4 border-white dark:border-dark-bg shadow group-hover:scale-125 transition"></div>
+
+                    <div class="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-accent-500/10 text-accent-500 text-xs font-bold w-fit">
+                                Higher Secondary Education
+                            </span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">[Year - e.g., 2021–2023]</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                            Intermediate Education (MPC / Science Stream)
+                        </h3>
+                        <p class="text-accent-500 font-semibold text-sm sm:text-base mt-1">
+                            Chaitanya Junior College
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                            Completed Board of Intermediate Education with a strong emphasis on Mathematics, Physics, and Chemistry, laying a rigorous mathematical foundation for AI & Engineering.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: Secondary School -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-slate-400 border-4 border-white dark:border-dark-bg shadow group-hover:scale-125 transition"></div>
+
+                    <div class="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm transition hover:shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold w-fit">
+                                Secondary School Certificate (SSC)
+                            </span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">[Year]</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                            High School Education
+                        </h3>
+                        <p class="text-slate-500 font-semibold text-sm sm:text-base mt-1">
+                            [Add School Name]
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                            Completed secondary school education with academic distinction and active participation in science quizzes and school activities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-100/60 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Technical Skills</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    Languages and frameworks I am actively learning, practicing, and improving through projects and coursework.
+                </p>
+                <div class="mt-3 inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-400 text-xs font-medium">
+                    <i class="fa-solid fa-circle-info mr-1"></i> Acknowledging ongoing student learning & growth
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card: C -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold text-lg">
+                                C
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">C Programming</h3>
+                                <p class="text-xs text-slate-400">Core Foundations</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Developing</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full rounded-full progress-bar-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: C++ -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-bold text-lg">
+                                C++
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">C++</h3>
+                                <p class="text-xs text-slate-400">OOP & DSA</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Intermediate Learning</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-indigo-500 h-full rounded-full progress-bar-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Python -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-brands fa-python text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">Python</h3>
+                                <p class="text-xs text-slate-400">Primary Language for AI</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Active Focus</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-emerald-500 h-full rounded-full progress-bar-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: HTML/CSS/JS -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-brands fa-html5 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">HTML, CSS & JavaScript</h3>
+                                <p class="text-xs text-slate-400">Web Fundamentals</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Developing</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-orange-500 h-full rounded-full progress-bar-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Python / Pandas -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-table text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">Python / Pandas</h3>
+                                <p class="text-xs text-slate-400">Data Manipulation</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Learning</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-cyan-500 h-full rounded-full progress-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Artificial Intelligence -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-brain text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">Artificial Intelligence</h3>
+                                <p class="text-xs text-slate-400">Core Concepts & Logic</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Academic Focus</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-purple-500 h-full rounded-full progress-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Machine Learning -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-diagram-project text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">Machine Learning</h3>
+                                <p class="text-xs text-slate-400">Supervised & Predictive Logic</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Developing</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-brand-500 h-full rounded-full progress-bar-fill" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Data Structures & Algorithms -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-code-branch text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white">Data Structures & Algo</h3>
+                                <p class="text-xs text-slate-400">Arrays, Trees, Graphs, Sorting</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Active Practice</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-rose-500 h-full rounded-full progress-bar-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Academic & Software Projects</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    Selected projects demonstrating practical application of Machine Learning, Python, and Web Technologies.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured Project: PRAGATI -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <!-- Project Visual Banner -->
+                        <div class="p-6 bg-gradient-to-r from-brand-600 to-accent-600 text-white relative overflow-hidden">
+                            <div class="absolute right-0 top-0 translate-x-4 -translate-y-4 opacity-10">
+                                <i class="fa-solid fa-chart-line text-9xl"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+                                Featured Project
+                            </span>
+                            <h3 class="text-2xl font-extrabold mt-4">PRAGATI</h3>
+                            <p class="text-brand-100 text-xs font-medium mt-1">Predictive Risk & Guidance for Academic Growth, Tracking & Intervention</p>
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                A smart education platform that analyzes academic data such as attendance, marks, assignments, and test performance to identify students who may be academically at risk. Diagnoses weak topics and provides personalized recovery plans.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Pandas / Machine Learning</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Web Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Actions -->
+                    <div class="p-6 pt-0 flex items-center gap-3">
+                        <button onclick="openModal('pragatiModal')" class="flex-1 py-2.5 rounded-xl gradient-bg text-white text-xs font-bold text-center shadow hover:opacity-95 transition">
+                            <i class="fa-solid fa-eye mr-1"></i> View Details
+                        </button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 transition text-xs font-bold" title="GitHub Code">
+                            <i class="fa-brands fa-github text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Placeholder 2 -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="p-6 bg-slate-800 text-white relative overflow-hidden">
+                            <div class="absolute right-0 top-0 translate-x-4 -translate-y-4 opacity-10">
+                                <i class="fa-solid fa-camera text-9xl"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider">
+                                Project Placeholder
+                            </span>
+                            <h3 class="text-2xl font-extrabold mt-4">Smart Attendance System</h3>
+                            <p class="text-slate-400 text-xs font-medium mt-1">Computer Vision & Facial Recognition</p>
+                        </div>
+
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                An automated attendance system using OpenCV and Python to recognize student faces in real-time and automatically update attendance records in a central database.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">OpenCV</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 flex items-center gap-3">
+                        <button onclick="openModal('project2Modal')" class="flex-1 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold text-center hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                            <i class="fa-solid fa-pen-to-square mr-1"></i> View Project
+                        </button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 transition text-xs font-bold" title="GitHub Code">
+                            <i class="fa-brands fa-github text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Placeholder 3 -->
+                <div class="bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="p-6 bg-slate-800 text-white relative overflow-hidden">
+                            <div class="absolute right-0 top-0 translate-x-4 -translate-y-4 opacity-10">
+                                <i class="fa-solid fa-robot text-9xl"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider">
+                                Project Placeholder
+                            </span>
+                            <h3 class="text-2xl font-extrabold mt-4">AI Learning Assistant</h3>
+                            <p class="text-slate-400 text-xs font-medium mt-1">Interactive Academic Support Chatbot</p>
+                        </div>
+
+                        <div class="p-6 space-y-4">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                An interactive AI student assistant prototype designed to answer subject queries, generate flashcards, and guide students through complex programming concepts.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">NLP</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 flex items-center gap-3">
+                        <button onclick="openModal('project3Modal')" class="flex-1 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold text-center hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                            <i class="fa-solid fa-pen-to-square mr-1"></i> View Project
+                        </button>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 transition text-xs font-bold" title="GitHub Code">
+                            <i class="fa-brands fa-github text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 bg-slate-100/60 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Certificates & Learning</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">Certifications earned through online platforms and technical training modules.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate 1 -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500">
+                                <i class="fa-solid fa-certificate text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-400">Completed 2024</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg">Python for Data Science & AI</h3>
+                        <p class="text-xs text-brand-600 dark:text-brand-400 font-medium mt-1">Coursera / Industry Provider</p>
+                        <p class="text-slate-500 text-xs mt-3">Credential ID: <span class="font-mono">PY-AI-2024-X1</span></p>
+                    </div>
+                    <button onclick="alert('Viewing certificate preview placeholder for Python for Data Science.')" class="mt-6 w-full py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 hover:text-white text-slate-700 dark:text-slate-200 text-xs font-bold transition text-center">
+                        View Certificate
+                    </button>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 rounded-xl bg-accent-500/10 text-accent-500">
+                                <i class="fa-solid fa-award text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-400">Completed 2024</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg">C++ Programming Fundamentals</h3>
+                        <p class="text-xs text-accent-500 font-medium mt-1">NPTEL / Online Platform</p>
+                        <p class="text-slate-500 text-xs mt-3">Credential ID: <span class="font-mono">CPP-FUND-882</span></p>
+                    </div>
+                    <button onclick="alert('Viewing certificate preview placeholder for C++ Fundamentals.')" class="mt-6 w-full py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 hover:text-white text-slate-700 dark:text-slate-200 text-xs font-bold transition text-center">
+                        View Certificate
+                    </button>
+                </div>
+
+                <!-- Certificate 3 Placeholder -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 rounded-xl bg-amber-500/10 text-amber-500">
+                                <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-400">Add Date</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg">[Certificate Name Placeholder]</h3>
+                        <p class="text-xs text-amber-500 font-medium mt-1">[Organization / Platform]</p>
+                        <p class="text-slate-500 text-xs mt-3">Credential ID: <span class="font-mono">XXXX-XXXX-2025</span></p>
+                    </div>
+                    <button onclick="alert('Add your custom certificate link or file here!')" class="mt-6 w-full py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 hover:text-white text-slate-700 dark:text-slate-200 text-xs font-bold transition text-center">
+                        View Certificate
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Achievements & Recognition</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">Highlights from competitions, technical quizzes, and academic participation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Hackathons -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-500 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base">College Hackathon</h3>
+                    <p class="text-xs text-brand-600 dark:text-brand-400 font-semibold mt-1">Participant / Finalist</p>
+                    <p class="text-slate-500 text-xs mt-2">Participated in college-level solution development hackathons centered on education & AI.</p>
+                </div>
+
+                <!-- Technical Quizzes -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-accent-500 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-accent-500/10 text-accent-500 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base">Technical Quizzes</h3>
+                    <p class="text-xs text-accent-500 font-semibold mt-1">Merit Holder</p>
+                    <p class="text-slate-500 text-xs mt-2">Active participant in C/C++ programming and general Computer Science quizzes.</p>
+                </div>
+
+                <!-- Coding Competitions -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-emerald-500 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base">Coding Challenges</h3>
+                    <p class="text-xs text-emerald-500 font-semibold mt-1">Problem Solving</p>
+                    <p class="text-slate-500 text-xs mt-2">Regular practice on platforms solving fundamental algorithmic problems in C++ & Python.</p>
+                </div>
+
+                <!-- Academic Excellence -->
+                <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-amber-500 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base">Academic Standing</h3>
+                    <p class="text-xs text-amber-500 font-semibold mt-1">Consistently Top Grades</p>
+                    <p class="text-slate-500 text-xs mt-2">Maintaining strong academic progress throughout 1st and 2nd Year B.Tech coursework.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-16 bg-slate-100/60 dark:bg-slate-900/40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+                <!-- Decorative Circle -->
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-500/20 rounded-full blur-2xl"></div>
+
+                <div class="space-y-3 text-center md:text-left z-10">
+                    <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold tracking-wider uppercase">Curriculum Vitae</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold">Interested in my full profile?</h2>
+                    <p class="text-slate-300 text-sm max-w-lg">
+                        Download my updated resume to review my detailed academic background, skill matrix, and project experiences.
+                    </p>
+                </div>
+
+                <div class="z-10 shrink-0">
+                    <a href="resume.pdf" download="Tejaswi_Resume.pdf" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl gradient-bg text-white font-extrabold shadow-lg shadow-brand-500/30 hover:scale-105 transition transform">
+                        <i class="fa-solid fa-file-arrow-down text-xl"></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Get In Touch</h2>
+                <div class="w-16 h-1 gradient-bg mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">Have a query, project idea, or networking request? Feel free to write me!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="p-3.5 rounded-xl bg-brand-500/10 text-brand-500 shrink-0">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold uppercase">Email</span>
+                            <a href="mailto:tejaswi@example.com" class="text-sm font-bold text-slate-800 dark:text-white hover:text-brand-500">
+                                tejaswi@example.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="p-3.5 rounded-xl bg-accent-500/10 text-accent-500 shrink-0">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold uppercase">LinkedIn</span>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-800 dark:text-white hover:text-brand-500">
+                                linkedin.com/in/tejaswi
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="p-3.5 rounded-xl bg-slate-800 text-white shrink-0">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold uppercase">GitHub</span>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-800 dark:text-white hover:text-brand-500">
+                                github.com/tejaswi
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="p-3.5 rounded-xl bg-rose-500/10 text-rose-500 shrink-0">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold uppercase">Location</span>
+                            <p class="text-sm font-bold text-slate-800 dark:text-white">India 🇮🇳</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="bg-white dark:bg-dark-card p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+                        <div>
+                            <label for="name" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Your Name</label>
+                            <input type="text" id="name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Your Email</label>
+                            <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm transition">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Subject</label>
+                            <input type="text" id="subject" required placeholder="Project inquiry / Connection" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm transition">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Message</label>
+                            <textarea id="message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl gradient-bg text-white font-bold text-sm shadow-md hover:opacity-95 transition">
+                            Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <a href="#home" class="text-lg font-bold text-white tracking-tight">Tejaswi<span class="text-brand-500">.</span></a>
+                <p class="text-xs text-slate-500 mt-1">© 2026 Tejaswi | B.Tech AIML. Built with passion for software engineering.</p>
+            </div>
+
+            <!-- Back to top button -->
+            <a href="#home" aria-label="Back to top" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-500 hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Project Details Modals -->
+    <!-- Pragati Modal -->
+    <div id="pragatiModal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-card max-w-xl w-full rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">PRAGATI - Deep Dive</h3>
+                <button onclick="closeModal('pragatiModal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                <strong>PRAGATI</strong> stands for <em>Predictive Risk & Guidance for Academic Growth, Tracking and Intervention</em>.
+            </p>
+            <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                <li>Analyzes attendance percentage, assignment performance, and test scores.</li>
+                <li>Flags students falling behind academic benchmarks before end-term exams.</li>
+                <li>Generates individual diagnosis reports highlighting specific weak modules.</li>
+                <li>Suggests tailored revision plans and study material recommendations.</li>
+            </ul>
+            <div class="pt-4 flex gap-3">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl gradient-bg text-white text-center font-bold text-xs">
+                    <i class="fa-brands fa-github mr-1"></i> View Repository
+                </a>
+                <button onclick="closeModal('pragatiModal')" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div id="project2Modal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-card max-w-xl w-full rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Smart Attendance System</h3>
+                <button onclick="closeModal('project2Modal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                This project focuses on automating student attendance using computer vision techniques with OpenCV.
+            </p>
+            <div class="pt-4 flex gap-3">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl gradient-bg text-white text-center font-bold text-xs">
+                    <i class="fa-brands fa-github mr-1"></i> View Repository
+                </a>
+                <button onclick="closeModal('project2Modal')" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 Modal -->
+    <div id="project3Modal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-card max-w-xl w-full rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">AI Learning Assistant</h3>
+                <button onclick="closeModal('project3Modal')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                An intelligent student helper bot prototype assisting with coding syntax, study notes, and quiz preparation.
+            </p>
+            <div class="pt-4 flex gap-3">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl gradient-bg text-white text-center font-bold text-xs">
+                    <i class="fa-brands fa-github mr-1"></i> View Repository
+                </a>
+                <button onclick="closeModal('project3Modal')" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-6 py-4 rounded-2xl bg-slate-900 text-white shadow-2xl border border-slate-700 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-brand-400 text-lg"></i>
+        <span id="toastMsg" class="text-xs sm:text-sm font-semibold">Message sent successfully!</span>
+    </div>
+
+    <!-- Embedded Client JavaScript -->
+    <script>
+        // --- 1. Dark Mode Toggle Script ---
+        const themeToggleBtns = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
+        
+        function initTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        
+        themeToggleBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+        });
+        initTheme();
+
+        // --- 2. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 3. Dynamic Typing Effect for Hero ---
+        const typingElement = document.getElementById('typing-text');
+        const phrases = [
+            "B.Tech AIML Student",
+            "Aspiring Software Engineer",
+            "Tech & AI Enthusiast",
+            "Problem Solver"
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            const currentPhrase = phrases[phraseIdx];
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentPhrase.length) {
+                typeSpeed = 2000; // Pause at full text
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+        typeLoop();
+
+        // --- 4. Modal Functions ---
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // --- 5. Contact Form Submission Handler ---
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
